@@ -1,0 +1,72 @@
+#main-bar {
+  display: flex;
+  gap: 10px; 
+  align-items: center;
+  background-color: rgb(159, 180, 180);
+  padding: 5px 10px;
+  width: fit-content; 
+
+}
+
+#main-bar a {
+  text-decoration: none;
+  color: black;
+  padding: 5px 10px;
+  background-color: rgb(159, 180, 180);
+}
+
+#main-bar a:hover{
+
+    background-color: rgb(0, 0, 0);
+    color: rgb(211, 7, 7);
+
+}
+
+
+#sub-bar a{
+    text-decoration: none;
+    color: black;
+    background-color: rgb(159, 180, 180);
+    padding: 5px 10px;
+}
+
+#sub-bar a:hover{
+
+    background-color: rgb(0, 0, 0);
+    color: white;
+
+}
+
+.dc-heroes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background-color: #948e8e;
+  border-radius: 10px;
+}
+
+.hero-card {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-card img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.hero-card h4 {
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.hero-card p {
+  margin: 4px 0;
+  font-size: 14px;
+}

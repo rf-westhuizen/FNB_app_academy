@@ -1,0 +1,52 @@
+h1{
+    color: green;
+    font-family: sans-serif;
+}
+
+h2{
+    color: blueviolet;
+}
+
+p{
+    color: rgba(16, 94, 94, 0.63);
+    font-family: fantasy;
+
+}
+
+ul{
+    list-style-type: square;
+}
+
+ol{
+    list-style-type: lower-latin;
+}
+
+.season-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.season-list li {
+    padding-left: 30px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 20px 20px;
+    margin-bottom: 10px;
+}
+
+/* Assign specific images to each item */
+.season-list li:nth-child(1) {
+    background-image: url('../images/summer.png'); 
+}
+
+.season-list li:nth-child(2) {
+    background-image: url('../images/autumn.png');
+}
+
+.season-list li:nth-child(3) {
+    background-image: url('../images/winter.png');
+}
+
+.season-list li:nth-child(4) {
+    background-image: url('../images/spring.png');
+}
