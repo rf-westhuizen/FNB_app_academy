@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+
+    <h1 id="heading1"></h1>
+    <p id="paragraph1"></p>
+    <p id="paragraph2"></p>
+
+    <a href="pages/login_page.html">Login Status:</a>
+
+   
+   
+   <script>
+        var text1;
+        var text2;
+        var text3;
+
+        var numberA = 5;
+        var numberB = 1;
+
+        text1 = "Hello  my new friends"
+        text2 = "we are going to have sooo much fun..."
+        text3 = "JS is awesome"
+        
+        document.getElementById("heading1").innerHTML = (text1); //("This is JaveScript!");
+        document.getElementById("paragraph1").innerHTML = (text2 + " " + text3); //(31 + " Aug " + 1995);
+        document.getElementById("paragraph2").innerHTML = ("Result: " + (numberA+numberB));
+
+   </script>
+</body>
+</html>
