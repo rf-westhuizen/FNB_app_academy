@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <!-- On element click method -->
+    <h1 onclick = "innerHTML ='Function Called'">JavaScript</h1>
+
+     <h1 onclick = "if(this.innerHTML == 'Test One'){
+        this.innerHTML = 'Test Two'
+     } else{this.innerHTML = 'Test One'}">Test One</h1>
+
+     <!-- Showing the benefit of using a function -->
+     <h1 id = "functionCaller"onclick="changeText()">Call ME!</h1>
+
+     <!-- Sending data to a function then update the result into the paragraph -->
+     <p id="addition" ondblclick="addNumbers(30,12)">Double Click me to get the answer to the univers:</p>
+
+     <!-- Lets now take data and send data back to the function -->
+     <p id="autoAddition">Auto run on page reload:</p>
+
+    <script>
+        // When a function is called inside the script element, it will execute when the page refreshes
+        //addNumbers(30,5);
+        document.getElementById("autoAddition").innerHTML = addAndReturn(1,3);
+
+
+        function changeText(){
+            if(document.getElementById("functionCaller").innerHTML == 'Call ME!'){
+               document.getElementById("functionCaller").innerHTML = 'Calling...'
+            } else{document.getElementById("functionCaller").innerHTML = 'Call ME!'}
+        }
+
+        function addNumbers(num1, num2){
+            document.getElementById("addition").innerHTML =  num1+num2;
+        }
+
+        function addAndReturn(num1, num2){
+            return num1+num2;
+        }
+
+    </script>
+    
+</body>
+</html>
