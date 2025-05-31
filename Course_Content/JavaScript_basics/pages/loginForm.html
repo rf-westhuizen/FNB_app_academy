@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style type="text/css">
+        input[type = "submit"]{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <center>
+
+     <h3>Login Form</h3>
+     <p id="loginStatus">welcome. Please Log In</p>
+
+     <form onsubmit="return verifyUser(event)">
+
+        <!-- The code here is better practice as the label element can be linked to an input or select element
+
+        <label for="email">Email:</label>
+        <input type="email" id="email">        
+        
+        -->
+
+        <table>
+            <tr> <!--Table ROW-->
+                <td> <!--Table Data-->
+                    Username:
+                </td>
+                <td>
+                    <input type="text" name="formUsername" id="formUsername">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Password:
+                </td>
+                <td>
+                    <input type="text" name="formPassword" id="formPassword">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" name="formSubmitButton" id="formSubmitButton" value="Login">
+                </td>
+            </tr>
+        </table>
+
+     </form>
+
+    </center>
+
+
+    <script>
+
+        function verifyUser(event){
+            event.preventDefault();
+            var username = document.getElementById("formUsername").value;
+            var password = document.getElementById("formPassword").value;
+            checkUserCredentials(username, password);
+        }
+
+        function checkUserCredentials(username, password){
+            var systemUsername = "RF";
+            var systemPassword = 1010;
+            if(username.trim() === "" || password.trim() === ""){
+               document.getElementById("loginStatus").innerHTML = "Enter All Fields" 
+               return false
+            }
+            if(username == systemUsername && password == systemPassword){
+                document.getElementById("loginStatus").innerHTML = "...Successful..."
+                return true;
+            } else {
+                document.getElementById("loginStatus").innerHTML = "Username or Password does not match!"
+                return false;
+            }
+        }
+
+
+    </script>
+</body>
+</html>

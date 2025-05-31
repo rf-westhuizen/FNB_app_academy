@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+</head>
+<body>
+    <label for="weather">What's the weather like? </label>
+        <select id="weather">
+        <option value="sunny">Sunny</option>
+        <option value="windy">Windy</option>
+        <option value="rainy">Rainy</option>
+        <option value="snowy">Snowy</option>
+        <option value="cloudy">Cloudy</option>
+    </select>
+
+    <a href="#" onclick="giveAdvice(event)">Go...</a>
+    <br/>
+    <p id="outputText">Weather advice :</p>
+
+
+    <script>
+
+        function giveAdvice(event){
+            event.preventDefault();
+            const weather = document.getElementById("weather").value; // we using .value because we working with either an input or select
+            const output = document.getElementById("outputText");
+
+            var advice = "";
+
+            switch (weather) {
+                case "sunny":
+                    advice = "Wear sunscreen and sunglasses!";
+                    break;
+                case "windy":
+                    advice = "Hold onto your hat!";
+                    break;
+                case "rainy":
+                    advice = "Take an umbrella!";
+                    break;
+                case "snowy":
+                    advice = "Wear a warm coat and boots!";
+                    break;
+                case "cloudy":
+                    advice = "Might be gloomy, but no rain expected.";
+                    break;
+                default:
+                    advice = "Please select a weather type.";
+            }
+
+            //output.innerText = "Weather advice: " + advice;
+            output.innerHTML = "Weather advice: <strong>" + advice + "</strong>"; // we are injecting actual html 
+
+
+        }
+    </script>    
+</body>
+</html>
