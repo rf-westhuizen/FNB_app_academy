@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Contact</title>
+</head>
+<body>
+
+    <br/>
+    <form id="editForm">
+        <label for="firstname">First name</label>
+        <input type="text" name="firstname" id="firstname"><br/>
+
+        <label for="lastname">Last name</label>
+        <input type="text" name="lastname" id="lastname"><br/>
+
+        <label for="mobile">Mobile</label>
+        <input type="text" name="mobile" id="mobile"><br/>
+
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email"><br/>
+
+        <label for="avatar">Select a file</label><br/>
+        <input type="file" name="avatar" id="avatar"><br/>
+
+        <button type="submit" id="submitForm">Submit</button>
+    </form>
+
+    <br/>
+    <button id="homeLink" type="button">Home</button>
+
+
+    <script src="config.js"></script>
+    <script>
+
+        document.getElementById("submitForm").addEventListener('click', submitForm);
+        document.getElementById("homeLink").addEventListener('click', homeLink);
+
+
+        function submitForm(event){
+
+            event.preventDefault(); // no auto refresh of the page just submit information
+
+            // create the formData object
+            const form = new FormData(document.querySelector('#editForm'));
+            form.append('apiKey', apiKey); // we ae injecting the apiKey into this form object creating this key:value paris
+
+            fetch(rootPath + 'controller/insert-contact/', {
+                method: 'POST',
+                headers: {'Accept': 'application/json, *.*'}, // will accept all forms of input data types
+                body: form
+            })
+            .then(function(response){
+                return response.text();
+            })
+            .then(function(data){
+                if(data == "1"){
+                    alert("Contact Added Successfully");
+                    //link the usert back to the homePage
+                    homeLink();
+                } else{
+                    alert(`Error Occurred: ${data}`);
+                    //link the usert back to the homePage or stay on this page
+                    homeLink();
+                }
+            });
+
+
+        }
+
+
+        function homeLink(){
+            // JS build-in function to open a window, the _self will ensure it opens in the current window and not a new window
+            window.open("index.html", "_self");
+        }
+
+    </script>
+    
+</body>
+</html>
