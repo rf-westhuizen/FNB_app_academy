@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Book</title>
+</head>
+<body onload="fetchContacts()">
+
+    <div id="table">Contacts Loading...</div>
+    <button id="refresh" type="button">Refresh</button>
+    <button id="addConttact" type="button">Add Contact</button>
+    
+
+    <script src="config.js"></script>
+    <script>
+
+        // event listener
+        document.getElementById("refresh").addEventListener('click', fetchContacts);
+
+        function fetchContacts(){
+            fetch(rootPath + "controller/get-contacts/") // basic fetch api call
+            .then(function(response){
+                return response.json(); // converts the api response object and converts it into a json array
+            })
+            .then(function(data){
+                console.log(data);
+                displayOutput(data);
+                
+            })
+        }
+
+        function displayOutput(data){
+            output = "<table>"
+
+                for(a in data){ // loop used to iterate over an array
+                    output += `
+
+                        <tr>
+                            <td><img src = "${rootPath}controller/uploads/${data[a].avatar}" width ="40"/></td>
+                            <td><h5>${data[a].firstname}</h5></td>
+                            <td><h5>${data[a].lastname}</h5></td>
+                        </tr>
+                    
+                    `
+
+                }
+
+                output += "</table>"
+                document.getElementById("table").innerHTML = output;
+
+        }
+
+
+    </script>
+</body>
+</html>

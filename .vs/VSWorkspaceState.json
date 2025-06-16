@@ -2,9 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Course_Content",
-    "\\Course_Content\\calculator_app",
-    "\\Course_Content\\calculator_app\\js"
+    "\\Course_Content\\calculator_app\\js",
+    "\\Course_Content\\Contact Book App"
   ],
-  "SelectedNode": "\\Course_Content\\calculator_app\\js\\index.js",
+  "SelectedNode": "\\Course_Content\\Contact Book App\\index.html",
   "PreviewInSolutionExplorer": false
 }

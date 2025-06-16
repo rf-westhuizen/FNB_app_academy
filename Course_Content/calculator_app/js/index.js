@@ -18,8 +18,8 @@ function calculateResult() {
 
     var expression = displayValue.value;
     var result = eval(expression);
-    console.log('result:'); // at this stage the result is a string ''
-    console.log(parseInt(result));
+    //console.log('result:'); // at this stage the result is a string ''
+    //console.log(parseInt(result));
     displayValue.value = result;
     newLine = true;
 
